@@ -164,9 +164,11 @@ In the API designer, you have the ability to test the API immediately after crea
 
   ![Invoke](images/invoke.png)
 
-4.3 Modify the **URL** field to include the request path passed in by the caller as well by appending `$(request.path)` to the **URL**.
+4.3 Verify you see the **URL** field to include the value listed below.  This will read for  the request path passed in by the caller as well by appending `$(request.path)` to the **URL**.
 
-  ![Invoke edited](images/invoke-edited.png)   
+    https://cloud.iexapis.com/stable/stock/$(request.parameters.symbol)/quote?token=$(api.properties.token)
+    
+  ![Invoke edited](images/verify-yousee-pathro-invoke.png)   
 
 4.3 Click **Save**
 
@@ -225,16 +227,11 @@ In the API designer, you have the ability to test the API immediately after crea
 5.4 Click the **Display Token** link.
 
 5.5 Copy the contents of the field **Log in with this token** to the clipboard. It provides a login command with a valid token for your username.
+  
+5.6 Paste the *oc login* command in your terminal or command prompt and run it.
 
-5.6 In a separate browser tab go to the IBM Cloud URL [https://cloud.ibm.com](https://cloud.ibm.com) and log in with your **ibm.com** credentials.
 
-5.7 Click the icon for  the **IBM Cloud Shell** terminal to launch it
-
-   ![IBM Cloud Shell](images/ibm-cloud-shell.png)   
-
-5.8 Paste the *oc login* command in  the IBM Cloud Shell terminal and run it
-
-## Step 6: Create a new OpenShift project for the Stock Trader Lite application
+## Step 6: Updating the the Stock Trader Lite application in your Project Space
 
 6.1 In the IBM Cloud Shell terminal set an environment variable for the  *student id* assigned to you by the instructors (e.g. **user005**) by running the following command and replacing *user???* with your assigned *student id*.
 
