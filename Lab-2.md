@@ -48,7 +48,7 @@ This lab is broken up into the following steps:
 
 2.1 In a new browser tab open the CP4I **Platform Home** URL provided to you by your instructors.
 
-2.2 Login with your *user???* credentials
+2.2 Login with your **OpenLDAP** credentials
 
 2.3 Click on **Skip Welcome**
 
@@ -56,11 +56,11 @@ This lab is broken up into the following steps:
 
   ![Navigate to API Connect](images/nav-to-apic.png)
 
-2.5 Select the **Cloud Dragons LDAP** user repository
+2.5 Select the **Cloud Dragons LDAP** OR **OpenLDAP** user repository
 
   ![Cloud Dragons LDAP](images/apic-clouddragons-ldap.png)
 
-2.6 Login with your *user???* username and password
+2.6 Login with your **OpenLDAP** username and password
 
 2.7 Click on the **Develop APIs and Products tile**
 
@@ -70,9 +70,9 @@ This lab is broken up into the following steps:
 
   ![Add API](images/add-api.png)
 
-2.9 On the next screen select **Existing OpenAPI** under **Import** and then click **Next**.
+2.9 On the next screen select **From asset repository** under **Import** and then click **Next**.
 
-  ![Existing OpenAPI](images/existing-api.png)
+  ![Existing OpenAPI](images/import-from-assetrepo.png)
 
 2.10 Now choose **stock-quote-api.yaml** from your local file system and click **Next**.
 
