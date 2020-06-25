@@ -24,7 +24,7 @@ This lab is broken up into the following steps:
 
 1. [Test the API](#step-4-test-the-api)
 
-1. [Setup IBM Cloud Shell](#step-5-setup-ibm-cloud-shell)
+1. [Setup Your Terminal / Command Prompt](#step-5-Setup-Your-Terminal-Command-Prompt)
 
 1. [Create a new OpenShift project for the Trader Lite app](#step-6-create-a-new-openshift-project-for-the-trader-lite-application)
 
@@ -245,13 +245,15 @@ In the API designer, you have the ability to test the API immediately after crea
 ** If you called your helm release something other than traderlite, please use your name**
 
 ```
-helm upgrade traderlite  --set stockQuoteMicroservice.apic.url="[API GATEWAY URL]" --set stockQuoteMicroservice.apic.clientId="[CLIENT ID]" ../traderlite  --disable-openapi-validation
+helm upgrade traderlite  --set stockQuoteMicroservice.apic.url="[API GATEWAY URL]" --set stockQuoteMicroservice.apic.clientId="[CLIENT ID]" ../traderlite
 ```
+
+The results of thie
 
 7.2b If this is a new or re-install, then use the following command below to set these variables with the information from API Connect.
 
 ```
-helm install traderlite  --set stockQuoteMicroservice.apic.url="[API GATEWAY URL]" --set stockQuoteMicroservice.apic.clientId="[CLIENT ID]" --disable-openapi-validation --namespace [YOUR OPENSHIFT PROJECT NAME]  .
+helm install traderlite  --set stockQuoteMicroservice.apic.url="[API GATEWAY URL]" --set stockQuoteMicroservice.apic.clientId="[CLIENT ID]"  --namespace [YOUR OPENSHIFT PROJECT NAME]  .
 ```
 
 7.4 Run the following command to get a list of running pods
