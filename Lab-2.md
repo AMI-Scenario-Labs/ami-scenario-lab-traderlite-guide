@@ -74,7 +74,7 @@ This lab is broken up into the following steps:
 
   ![Existing OpenAPI](images/import-from-assetrepo.png)
 
-2.10 Now choose **Launch the asset repository** button from the popup windowfrom your local file system and click **Next**.
+2.10 Now choose **Launch the asset repository** button from the popup window.
 
   ![Choose file](images/launch-the-assetrepo.png)
 
@@ -86,6 +86,7 @@ This lab is broken up into the following steps:
 
   ![Choose file](images/confirmation-of-assetrepo-import.png)
   
+2.10c A confirmation message will appear confirmation the successful import from the Asset Repository.  Now click **Next**.
 
 2.11 **Do not** select **Activate API**. Click **Next**
 
@@ -129,9 +130,9 @@ After importing the existing API, the first step is to configure basic security 
 
 3.12 Choose the **sandbox** catalog and for the URL copy and paste the following URL:
 
-    https://stock-trader-quote.us-south.cf.appdomain.cloud
+    https://cloud.iexapis.com/stable/stock/
 
-   ![Target URL](images/target-url.png)
+   ![Target URL](images/enterthe-stockservice-targeturl.png)
 
 3.13 Click **Save** to complete the configuration.
 
