@@ -74,9 +74,18 @@ This lab is broken up into the following steps:
 
   ![Existing OpenAPI](images/import-from-assetrepo.png)
 
-2.10 Now choose **stock-quote-api.yaml** from your local file system and click **Next**.
+2.10 Now choose **Launch the asset repository** from your local file system and click **Next**.
 
-  ![Choose file](images/choose-file.png)
+  ![Choose file](images/launch-the-assetrepo.png)
+
+2.10a Now choose **Launch the asset repository** from your local file system and click **Next**.
+
+  ![Choose file](images/select-the-github-openapi.png)
+  
+2.10b Now choose **Launch the asset repository** from your local file system and click **Next**.
+
+  ![Choose file](images/confirmation-of-assetrepo-import.png)
+  
 
 2.11 **Do not** select **Activate API**. Click **Next**
 
