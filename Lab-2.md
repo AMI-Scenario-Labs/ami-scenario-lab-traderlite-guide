@@ -74,7 +74,7 @@ This lab is broken up into the following steps:
 
   ![Existing OpenAPI](images/import-from-assetrepo.png)
 
-2.10 Now choose **Launch the asset repository** from your local file system and click **Next**.
+2.10 Now choose **Launch the asset repository** button from the popup windowfrom your local file system and click **Next**.
 
   ![Choose file](images/launch-the-assetrepo.png)
 
@@ -82,7 +82,7 @@ This lab is broken up into the following steps:
 
   ![Choose file](images/select-the-github-openapi.png)
   
-2.10b Now choose **Launch the asset repository** from your local file system and click **Next**.
+2.10b Look for **TraderLite Stock Quote API** from the list of items and click **+**.
 
   ![Choose file](images/confirmation-of-assetrepo-import.png)
   
