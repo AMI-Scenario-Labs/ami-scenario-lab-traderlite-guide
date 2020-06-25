@@ -168,7 +168,7 @@ In the API designer, you have the ability to test the API immediately after crea
 
     https://cloud.iexapis.com/stable/stock/$(request.parameters.symbol)/quote?token=$(api.properties.token)
     
-  ![Invoke edited](images/verify-yousee-pathro-invoke.png)   
+  ![Invoke edited](images/verify-yousee-pathfor-invoke.png)   
 
 4.3 Click **Save**
 
@@ -214,7 +214,7 @@ In the API designer, you have the ability to test the API immediately after crea
 
   ![Gateway URL](images/gateway-url.png)
 
-## Step 5: Setup IBM Cloud Shell
+## Step 5: Setup Your Terminal / Command Prompt  
 
 5.1 In a separate browser tab go to the OpenShift console URL provided by your instructor  for the cluster designated to run the Stock Trader Lite application for the workshop.
 
@@ -233,38 +233,29 @@ In the API designer, you have the ability to test the API immediately after crea
 
 ## Step 6: Updating the the Stock Trader Lite application in your Project Space
 
-6.1 In the IBM Cloud Shell terminal set an environment variable for the  *student id* assigned to you by the instructors (e.g. **user005**) by running the following command and replacing *user???* with your assigned *student id*.
+6.1 Verify that you are in your project namespace by running the following command. 
 
 ```
-export STUDENTID=user???
-```
-   ![Set STUDENTID](images/set-student-id.png)
-
-6.2 Create a new OpenShift project by running the following command
-
-```
-oc new-project trader-$STUDENTID
+ oc project [my-project-name]
 ```
 
-## Step 7: Prepare for installation
 
-7.1 In the IBM Cloud Shell terminal set an environment variable for the  *student id* assigned to you by the instructors (e.g. **user005**) by running the following command and replacing *user???* with your assigned *student id*.
+## Step 7: Install/UPDATE the Trader Lite app
 
-```
-export STUDENTID=user???
-```
-   ![Set STUDENTID](images/set-student-id.png)
+7.1 From the terminal/command prompt, browse to the directory where you originally downloaded the chart.  
 
-7.2 From the terminal run the following command
+7.2a If you still have the application installed from Lab 1, then run the following command to republish the existing applcation with the new information from API Connect. 
+
+** If you called your helm release something other than traderlite, please use your name**
 
 ```
-git clone https://github.com/IBMStockTraderLite/traderlite-cp4i.git
+helm upgrade traderlite  --set stockQuoteMicroservice.apic.url="[API GATEWAY URL]" --set stockQuoteMicroservice.apic.clientId="[CLIENT ID]" ../traderlite  --disable-openapi-validation
 ```
 
-7.3 Go to the repo main directory required to run the setup scripts
+7.2b If this is a new or re-install, then use the following command below to set these variables with the information from API Connect. 
 
 ```
-cd traderlite-cp4i/scripts
+helm install traderlite  --set stockQuoteMicroservice.apic.url="[API GATEWAY URL]" --set stockQuoteMicroservice.apic.clientId="[CLIENT ID]" --disable-openapi-validation --namespace [YOUR OPENSHIFT PROJECT NAME]  .
 ```
 
 7.4 Run the following command to get a list of running pods
