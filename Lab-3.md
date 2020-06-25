@@ -263,6 +263,10 @@ When you're done the screen should look like the following:
 
 To deploy an Integration Server for your flow, you need to create a Kubernetes secret with your Salesforce credentials in the OpenShift cluster running Cloud Pak for Integration. We've created a helper app for you to do this.
 
+```
+oc create secret generic stockquote --from-literal=apicurl=$API_CONNECT_PROXY_URL --from-literal=url=$STOCK_QUOTE_URL --from-literal=iexurl=$IEX_URL
+```
+
 5.1 In a separate browser tab, launch the helper app using the URL provided to you by the instructor. When prompted login using your workshop credentials
 
 5.2 Enter the Salesforce authentication info requested. Note that in this UI the Salesforce password and Security Token are entered in separate fields.
