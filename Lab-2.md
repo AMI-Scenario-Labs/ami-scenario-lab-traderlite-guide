@@ -41,7 +41,7 @@ This lab is broken up into the following steps:
 
 1.1 We have already imported the OpenAPI Definition you need into the Asset Repository ( see image below ).  You will import the file directly from the Asset Repo when creating the API. 
 
-	![ASSET REPO Import](images/asset-repo-stock-quote.png)
+  ![](images/asset-repo-stock-quote.png)
 
 
 ## Step 2: Import the OpenAPI definition file into API Manager
