@@ -136,9 +136,21 @@ After importing the existing API, the first step is to configure basic security 
 
 3.13 Click **Save** to complete the configuration.
 
-3.14 Click on the **openldap** property. Click **Add**.
+3.14 Click on the **openldap** property.  
 
-3.15 
+  ![Security](images/select-openldap-property.png)
+
+3.15 Choose **ADD** and choose the **sandbox** catalog and enter your **OpenLDAP** username that was provided to you.  This will help us differentiate your specific API once we get to tracing. Click **Save** to complete the configuration.
+
+  ![Security](images/enterthe-openldap-username.png)
+  
+3.16 Click on the **token** property. 
+
+  ![Security](images/select-token-property.png) 
+
+3.17 Replace the token key that was provided at the beginning of class.  Click **Save** to complete the configuration. 
+
+  ![Security](images/replace-tokenkey.png) 
 
 ## Step 4: Test the API
 
