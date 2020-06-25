@@ -136,6 +136,10 @@ After importing the existing API, the first step is to configure basic security 
 
 3.13 Click **Save** to complete the configuration.
 
+3.14 Click on the **openldap** property. Click **Add**.
+
+3.15 
+
 ## Step 4: Test the API
 
 In the API designer, you have the ability to test the API immediately after creation in the **Assemble** view.
