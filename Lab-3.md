@@ -261,21 +261,32 @@ When you're done the screen should look like the following:
 
 ## Section 5: Save your Salesforce credentials as an OpenShift secret
 
-To deploy an Integration Server for your flow, you need to create a Kubernetes secret with your Salesforce credentials in the OpenShift cluster running Cloud Pak for Integration. We've created a helper app for you to do this.
+To deploy an Integration Server for your flow, you need to create a Kubernetes secret with your Salesforce credentials in the OpenShift cluster running Cloud Pak for Integration. 
+
+Create a YAML file to represent your Salesforce Credentials.
 
 ```
-oc create secret generic stockquote --from-literal=apicurl=$API_CONNECT_PROXY_URL --from-literal=url=$STOCK_QUOTE_URL --from-literal=iexurl=$IEX_URL
+---
+accounts:
+  salesforce:
+    - credentials:
+        authType: "oauth2Password"
+        username: "<your_sf_email_login>"
+        password: "<password_and_security_token>"
+        clientIdentity: "<consumer_key>"
+        clientSecret: "<consumer_secret>"
+      endpoint:
+        loginUrl: "https://login.salesforce.com"
+      name: "Account 1"
 ```
 
-5.1 In a separate browser tab, launch the helper app using the URL provided to you by the instructor. When prompted login using your workshop credentials
+After you create this file, now let's add this as a secret in your namespace where you are using the App Designer. 
 
-5.2 Enter the Salesforce authentication info requested. Note that in this UI the Salesforce password and Security Token are entered in separate fields.
+```
+oc create secret generic sfcred --from-file=credentials=sfcred.yaml
+```
 
-![Save Salesforce credentials](images/savesfcreds.png)
-
-5.3 Click **Save credentials**. You should see a message like the following indicating the a secret was created.
-
-![Save response](images/saveresponse.png)
+Once this is create, we will use this in the chart to add it to the integration server
 
 ## Section 6: Create an Integration Server instance and deploy your flow
 
