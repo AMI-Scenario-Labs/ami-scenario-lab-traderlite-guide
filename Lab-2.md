@@ -150,7 +150,7 @@ After importing the existing API, the first step is to configure basic security 
 
 3.17 Replace the token key that was provided at the beginning of class.  Click **Save** to complete the configuration. 
 
-  ![Security](images/replace-tokenkey.png) 
+  ![Security](images/replace-tokenkey.png)
 
 ## Step 4: Test the API
 
