@@ -286,7 +286,6 @@ After you create this file, now let's add this as a secret in your namespace whe
 oc create secret generic sfcred --from-file=credentials=sfcred.yaml
 ```
 
-Once this is create, we will use this in the chart to add it to the integration server
 
 ## Section 6: Create an Integration Server instance and deploy your flow
 

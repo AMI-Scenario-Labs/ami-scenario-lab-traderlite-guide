@@ -4,9 +4,22 @@ In this lab, you will get acquainted with the command line and how to publish He
 
 ## Downloading the Scenario Lab Assets
 
+1. Browse to the following URL to get access to the lab assets: 
+
+https://github.com/IBMIntegration/ami-scenario-lab-traderlite-assets
+
+2. Use the **Download ZIP** button to copy the archive of hte repo locally to work with during the lab. 
+
+![install verify](images/lab1-download.png)
+
+
+3. Let's update the supporting charts that will be needed for this application to install.  There are two database charts that are dependencies.  By running the following command below, it will download
+
 ```
 helm dependency update
 ```
+
+Once this command runs, you should see the following output. 
 
 ```
 Hang tight while we grab the latest from your chart repositories...
@@ -18,8 +31,16 @@ Downloading mongodb from repo https://charts.bitnami.com/bitnami/
 Deleting outdated charts
 ```
 
+4. Once we have the dependencies downloaded successfully for our application, it is now time to run the helm install command.  The syntax for helm3 install is below. 
+
 ```
-helm3 install acmetrader --namespace jamilspain .
+helm install [release-name] --namespace [your project name]  [ path to root of chart folder]
+```
+
+For instance, from the root of the chart folder I can install the application release called "acemtrader" into my "jamilspain" project space. 
+
+```
+helm install acmetrader --namespace jamilspain .
 ```
 
 RESULTS:
