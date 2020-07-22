@@ -94,6 +94,14 @@ This lab is broken up into the following steps:
 
 ![Edit API](images/edit-api.png)
 
+## Step 2b: Importing from Existing OpenAPI
+
+2.1. If the Asset Repository import does correctly, you can use the **Existing OpenAPI**
+
+![Edit API](images/lab2-open-existing.png)
+
+
+
 ## Step 3: Configure the API
 
 After importing the existing API, the first step is to configure basic security before exposing it to other developers. By creating a client key you are able to identify the app using the services. Next, we will define the backend endpoints where the API is actually running. API Connect supports pointing to multiple backend endpoints to match your multiple build stage environments.
