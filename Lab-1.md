@@ -66,6 +66,13 @@ In order to get the URL for your web application, let's browse the left hand sid
 
 ![view-route](images/lab1-finding-the-route-to-webapp.png)
 
+When you click on the route, you should see the Tradr Web Application.  You can use the credentials to login:
+
+Username  | Password
+------------- | ------------- 
+stock    | trader    
+
+![view-route](images/default-ui.png)
 
 ## Summary
 
