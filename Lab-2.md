@@ -11,7 +11,7 @@ The architecture of the app is shown below:
 - The **portfolio** microservice sits at the center of the application. This microservice:
   - persists trade data using JDBC to a MariaDB database
   - invokes the **stock-quote** service that invokes an API defined in API Connect in CP4I to get stock quotes
-  - calls the **trade-history** service to store trade data in a PostgreSQL database that can be queried for reporting purposes.
+  - calls the **trade-history** service to store trade data in a MongoDB database that can be queried for reporting purposes.
   - calls the **trade-history** service to get aggregated historical trade data.
 
 This lab is broken up into the following steps:
@@ -54,9 +54,9 @@ This lab is broken up into the following steps:
 
 ![Navigate to API Connect](images/nav-to-apic.png)
 
-2.5 Select the **Cloud Dragons LDAP** OR **OpenLDAP** user repository
+2.5 Select the **OpenLDAP** user repository.
 
-![Cloud Dragons LDAP](images/apic-clouddragons-ldap.png)
+![Cloud Dragons LDAP](images/lab2-apiclogin.png)
 
 2.6 Login with your **OpenLDAP** username and password
 

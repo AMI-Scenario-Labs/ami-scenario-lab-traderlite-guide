@@ -280,11 +280,36 @@ accounts:
       name: "Account 1"
 ```
 
-After you create this file, now let's add this as a secret in your namespace where you are using the App Designer. 
+After you create this file, now let's add this as a secret in your namespace where you are using the App Designer. ** Please be sure to fill out your real credentails **
 
 ```
-oc create secret generic sfcred --from-file=credentials=sfcred.yaml
+oc create secret generic sfcred --from-file=credentials=sfcred.yaml -n [project space]
 ```
+
+Ordinarily that would work for you to push a secret to the right place.  Since we need to push this secret to your designated Cloud Pak for Integration **ace-[company]** namespace, we should go ahead and render credentials to make a proper secret yaml. 
+
+This capability is provided on the kubectl/oc command line using the **--dry-run** option. Take a look at the command below.
+
+```
+oc create secret generic sfcred --from-file=credentials=sfcred.yaml -o yaml --dry-run
+```
+
+This will give you the secret in proper yaml for that we can use to import it into OpenShift/Cloud Pak for Integration. The output should look like the following:
+
+```
+apiVersion: v1
+data:
+  credentials: LS0tCmFjY291bnRzOgogIHNhbGVzZm9yY2U6CiAgICAtIGNyZWRlbnRpYWxzOgogICAgICAgIGF1dGhUeXBlOiAib2F1dGgyUGFzc3dvcmQiCiAgICAgICAgdXNlcm5hbWU6ICI8eW91cl9zZl9lbWFpbF9sb2dpbj4iCiAgICAgICAgcGFzc3dvcmQ6ICI8cGFzc3dvcmRfYW5kX3NlY3VyaXR5X3Rva2VuPiIKICAgICAgICBjbGllbnRJZGVudGl0eTogIjxjb25zdW1lcl9rZXk+IgogICAgICAgIGNsaWVudFNlY3JldDogIjxjb25zdW1lcl9zZWNyZXQ+IgogICAgICBlbmRwb2ludDoKICAgICAgICBsb2dpblVybDogImh0dHBzOi8vbG9naW4uc2FsZXNmb3JjZS5jb20iCiAgICAgIG5hbWU6ICJBY2NvdW50IDEiCg==
+kind: Secret
+metadata:
+  creationTimestamp: null
+  namespace: [add this to push it to a proper namespace]
+  name: sfcred
+```
+
+Let's now take this out put and apply it to your namespace.  Inside the Platform Navigator, there is a catalog with a feature that will allow you to paste in yaml to be applied.  See the image below to make that happen.  Add the **/catalog** to the end of the icp-console URL for the Foundation Services.  
+
+![Navigate to API Connect](images/lab3-pastesecret.png)
 
 
 ## Section 6: Create an Integration Server instance and deploy your flow
@@ -293,7 +318,7 @@ In this Step you'll create an Integration Server instance and deploy your flow t
 
 6.1 In a new browser tab open the CP4I **Platform Home** URL provided to you by your instructors.
 
-6.2 Login with your _user???_ credentials if prompted
+6.2 Login with your _openldap_ credentials if prompted
 
 6.3 Click on **Skip Welcome**
 
@@ -323,11 +348,11 @@ In this Step you'll create an Integration Server instance and deploy your flow t
 
 6.11 Enter the following settings:
 
-- In the **Details** section for the **Name** enter `user???sf` where _user???_ is the username of your credentials (e.g. \*user005sf\*\*)
+- In the **Details** section for the **Name** enter `openldap???sf` where _user???_ is the username of your credentials (e.g. \*jamilspain-sf\*\*)
 
 - In the **Details** section for **IBM App Connect Designer flows** select **Enabled for local connectors only**
 
-- In the **Integration Server** section for **Name of the secret that contains the server configuration** enter `user???-sf-connect` where _user???_ is the username of your credentials (e.g. \*user005-sf-connect\*\*)
+- In the **Integration Server** section for **Name of the secret that contains the server configuration** enter `user???-sf-connect` where _user???_ is the username of your credentials (e.g. \*jamilspain-sf-connect\*\*)
 
 - In the **Configuration for deployments** section change the **Replica count** to 1
 
