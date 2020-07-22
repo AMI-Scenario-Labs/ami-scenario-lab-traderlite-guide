@@ -100,7 +100,13 @@ This lab is broken up into the following steps:
 
 ![Edit API](images/lab2-open-existing.png)
 
+From the assets repo that you downloaded, you can still get the original file to import.  
 
+![Locate File](images/lab2-stockquote.png)
+
+Drag the file on the box to upload it and click **Next**.  The prompts should follow a similar flow as above. 
+
+![Import API](images/lab2-importapi.png)
 
 ## Step 3: Configure the API
 
