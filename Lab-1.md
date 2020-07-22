@@ -58,6 +58,24 @@ Run  the following command to get the URL of  the applications's UI:
  echo "http://"`oc get route acmetrader-tradr  -o jsonpath='{.spec.host }'`"/tradr"
 ```
 
+Once the command runs successfully, open the OpenShift Console to your namespace.  On the Overview screen, look at your Workloads to verify that everything is running.  
+
 ![install verify](images/lab1-install-verification.png)
 
+In order to get the URL for your web application, let's browse the left hand side to view the external routes exposed. 
+
 ![view-route](images/lab1-finding-the-route-to-webapp.png)
+
+
+## Summary
+
+Congratulations ! You successfully completed the following key steps in this lab:
+
+- Learning the fundamentals of Helm 3 command line. 
+- Deployed a the application to OpenShift namespace using Helm v3.
+- Verified how to confirm workloads published in the O
+- Deployed the Trader Lite app and saw it being able to work as published.
+ 
+
+![view-route](images/lab1-diagram.png)
+
