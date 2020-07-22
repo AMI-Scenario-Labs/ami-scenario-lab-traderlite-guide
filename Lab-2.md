@@ -142,9 +142,9 @@ After importing the existing API, the first step is to configure basic security 
 
 3.12 Choose the **sandbox** catalog and for the URL copy and paste the following URL:
 
-    https://cloud.iexapis.com/stable/stock/
+    https://stock-trader-quote.us-south.cf.appdomain.cloud/stocks
 
-![Target URL](images/enterthe-stockservice-targeturl.png)
+![Target URL](images/enterthe-stockservice-targeturl2.png)
 
 3.13 Click **Save** to complete the configuration.
 
@@ -156,14 +156,7 @@ After importing the existing API, the first step is to configure basic security 
 
 ![Security](images/enterthe-openldap-username.png)
 
-3.16 Click on the **token** property.
-
-![Security](images/select-token-property.png)
-
-3.17 Replace the token key that was provided at the beginning of class. Click **Save** to complete the configuration.
-
-![Security](images/replace-tokenkey.png)
-
+ 
 ## Step 4: Test the API
 
 In the API designer, you have the ability to test the API immediately after creation in the **Assemble** view.
@@ -172,9 +165,13 @@ In the API designer, you have the ability to test the API immediately after crea
 
 ![Assemble](images/assemble.png)
 
-4.2 Click **invoke** in the flow designer. Note the window on the right with the configuration. The **invoke** node calls the **target-url** (ie the external service).
+4.1a The Assemble page should resemble the picture below with 3 specific paths for each call being made. 
 
-![Invoke](images/invoke.png)
+![Assemble](images/assemble-3.png)
+
+4.2 Click **invoke** in the flow designer. Note the window on the right with the configuration. The **invoke** node calls the **target-url** (ie the external service) with the original path appended.  All three invokes should use this pattern.
+
+![Invoke](images/invoke-2.png)
 
 4.3 Verify you see the **URL** field to include the value listed below. This will read for the request path passed in by the caller as well by appending `$(request.path)` to the **URL**.
 
