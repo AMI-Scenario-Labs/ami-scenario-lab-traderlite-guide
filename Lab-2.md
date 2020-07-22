@@ -173,11 +173,6 @@ In the API designer, you have the ability to test the API immediately after crea
 
 ![Invoke](images/invoke-2.png)
 
-4.3 Verify you see the **URL** field to include the value listed below. This will read for the request path passed in by the caller as well by appending `$(request.path)` to the **URL**.
-
-    https://cloud.iexapis.com/stable/stock/$(request.parameters.symbol)/quote?token=$(api.properties.token)
-
-![Invoke edited](images/verify-yousee-pathfor-invoke.png)
 
 4.3 Click **Save**
 
