@@ -130,7 +130,7 @@ Now you can continue on with the Event Streams Configuration.
 3.3 In your OpenShift Project, we need to create a secret. Use the following command to create a secret in the project space.
 
 ```
-oc create secret generic kafkaconnect-keystore --from-file=es-cert.jks=[path-to-es-cert.jks]
+oc create secret generic kafkaconnect-keystore --from-file=es-cert.jks=[path-to-es-cert.jks] --namespace [openshift namespace]
 ```
 
 ## Step 4: Add messaging components to the Trader Lite app
