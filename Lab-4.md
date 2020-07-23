@@ -35,6 +35,24 @@ This lab is broken up into the following steps:
 
 ## Step 1: Create a topic in the Event Streams Management Console
 
+Before we get started with configuring Event Streams, let's add some information to the our application to make it aware of the MQ Instance running in Cloud Pak for Integration. We need to gather the following information:
+
+Name  | Value 
+------------- | ------------- 
+Queue Name   | [name].EVENT.QUEUE    
+Queue Manager    | [queue mgr name]   
+Queue Listener Svc    | [mq-service-name].mq.svc   
+Channel    | DEV.APP.SVRCONN   
+
+Once we have this information, let's run the helm upgrade to activate some config map data. 
+
+```
+helm upgrade [release-name]  --set mqIntegration.enabled=true --set salesforceIntegration.flow.url=[YOUR FLOW URL] --reuse-values . --namespace [openshift-project]
+```
+
+Now you can continue on with the Event Streams Configuration. 
+
+
 1.1 In a new browser tab open the CP4I **Platform Home** URL provided to you by your instructors.
 
 1.2 Login with your **OpenLDAP** credentials
