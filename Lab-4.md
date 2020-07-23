@@ -47,7 +47,7 @@ Channel    | DEV.APP.SVRCONN
 Once we have this information, let's run the helm upgrade to activate some config map data. 
 
 ```
-helm upgrade [release-name]  --set mqIntegration.enabled=true --set salesforceIntegration.flow.url=[YOUR FLOW URL] --reuse-values . --namespace [openshift-project]
+helm upgrade [release-name]  --set mqIntegration.enabled=true --set global.mqaccess.qname=[queue name] --set global.mqaccess.qmgr=[queue mgr] --set global.mqaccess.channel="DEV.APP.SRVCONN" --reuse-values . --namespace [openshift-project]
 ```
 
 Now you can continue on with the Event Streams Configuration. 
