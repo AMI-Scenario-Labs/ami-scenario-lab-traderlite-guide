@@ -237,7 +237,7 @@ When you're done the screen should look like the following:
 
 - Click **Retrieve Contacts**
 
-4.19 Click **Add condition +** and select the **ClientId** to be equal to the **ContactId**
+  4.19 Click **Add condition +** and select the **ClientId** to be equal to the **ContactId**
 
 ![Add Condition](images/addcondition.png)
 
@@ -261,7 +261,7 @@ When you're done the screen should look like the following:
 
 ## Section 5: Save your Salesforce credentials as an OpenShift secret
 
-To deploy an Integration Server for your flow, you need to create a Kubernetes secret with your Salesforce credentials in the OpenShift cluster running Cloud Pak for Integration. 
+To deploy an Integration Server for your flow, you need to create a Kubernetes secret with your Salesforce credentials in the OpenShift cluster running Cloud Pak for Integration.
 
 Create a YAML file to represent your Salesforce Credentials.
 
@@ -286,12 +286,12 @@ After you create this file, now let's add this as a secret in your namespace whe
 oc create secret generic sfcred --from-file=credentials=sfcred.yaml -n [project space]
 ```
 
-Ordinarily that would work for you to push a secret to the right place.  Since we need to push this secret to your designated Cloud Pak for Integration **ace-[company]** namespace, we should go ahead and render credentials to make a proper secret yaml. 
+Ordinarily that would work for you to push a secret to the right place. Since we need to push this secret to your designated Cloud Pak for Integration **ace-[company]** namespace, we should go ahead and render credentials to make a proper secret yaml.
 
 This capability is provided on the kubectl/oc command line using the **--dry-run** option. Take a look at the command below.
 
 ```
-oc create secret generic sfcred --from-file=credentials=sfcred.yaml -o yaml --dry-run
+oc create secret generic sfcred --from-file=credentials=salesforce-credentials.yaml -o yaml --dry-run
 ```
 
 This will give you the secret in proper yaml for that we can use to import it into OpenShift/Cloud Pak for Integration. The output should look like the following:
@@ -307,10 +307,9 @@ metadata:
   name: sfcred
 ```
 
-Let's now take this out put and apply it to your namespace.  Inside the Platform Navigator, there is a catalog with a feature that will allow you to paste in yaml to be applied.  See the image below to make that happen.  Add the **/catalog** to the end of the icp-console URL for the Foundation Services.  
+Let's now take this out put and apply it to your namespace. Inside the Platform Navigator, there is a catalog with a feature that will allow you to paste in yaml to be applied. See the image below to make that happen. Add the **/catalog** to the end of the icp-console URL for the Foundation Services.
 
 ![Navigate to API Connect](images/lab3-pastesecret.png)
-
 
 ## Section 6: Create an Integration Server instance and deploy your flow
 
@@ -386,7 +385,6 @@ The bottom half of the dialog should look like the following:
 
 ## Section 8: Test your App Connect Flow with Trader Lite
 
-
 8.1 Run the following command in the chart directory with the Flow URL you copied to the clipboard:
 
 ```
@@ -427,7 +425,6 @@ traderlite-tradr-6cd8d879f4-tznq7           1/1     Running   0          6m21s
 ```
 
 8.5 Open the Browser to the Stock Tradr Web Application.
-
 
 8.6 Log in using the username `stock` and the password `trader`
 
